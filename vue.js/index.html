@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <title>Hello Code</title>
+</head>
+<body>
+
+    <div id="app">
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <h1 class="text-center m-3">Product</h1>
+                <hr>
+                    <p>{{ product }}</p>
+                    <p>{{ author }}</p>
+                    <p>{{ description }}</p>
+                    <p>{{ components }}</p>
+                    <hr>
+                    <p>
+                        Product: <input v-model="product">
+                    </p>
+                    <p>
+                        Author: <input v-model="author">
+                    </p>
+                    <p>
+                        Description: <input v-model="description">
+                    </p>
+                    <p>
+                        Components: <input v-model="components">
+                    </p>
+            </div>
+        </div>
+        
+
+    </div>
+
+    <script src="vue.global.js"></script>
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    product: "Rocket",
+                    author: "Sadeq",
+                    description: "I love this job",
+                    components: 101,
+                }
+            }
+        }).mount('#app')
+    </script>
+</body>
+</html>
