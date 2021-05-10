@@ -27,7 +27,9 @@
                         Description: <input v-model="description">
                     </p>
                     <p>
-                        Components: <input v-model="components">
+                        Components: <button class="btn btn-success mx-1 px-4" @click="components++ "> plus </button>
+                                <button class="btn btn-danger mx-1 px-4" v-on:click="components-- "> minimise </button>
+                                <button class="btn btn-warning mx-1 px-4" @click="clearAllFields()"> Clear </button>
                     </p>
             </div>
         </div>
@@ -44,6 +46,14 @@
                     author: "Sadeq",
                     description: "I love this job",
                     components: 101,
+                }
+            },
+            methods: {
+                clearAllFields() {
+                    this.product= "";
+                    this.author= "";
+                    this.description= "";
+                    this.components= "";
                 }
             }
         }).mount('#app')
